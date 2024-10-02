@@ -1,0 +1,101 @@
+const string CommandSetName = "1";
+const string CommandSetPassword = "2";
+const string CommandDatabaseEntry = "3";
+const string CommandChangeConsoleColor = "4";
+const string CommandExit = "5";
+const string CommandSetConsoleColorBlue = "b";
+const string CommandSetConsoleColorRed = "r";
+const string CommandSetConsoleColorGreen = "g";
+const string CommandSetConsoleColorYellow = "y";
+
+string userName = "";
+string userPassword = "";
+string userInput = "";
+bool isWork = true;
+
+Console.ForegroundColor = ConsoleColor.DarkCyan;
+
+while (isWork)
+{
+    Console.Clear();
+    Console.WriteLine("Добро пожаловать в нашу программу, пожалуйста выберите действие:");
+    Console.WriteLine($"{CommandSetName} - Установить имя пользователя." +
+        $"\n{CommandSetPassword} - Установить пароль." +
+        $"\n{CommandDatabaseEntry} - Войти в базу данных." +
+        $"\n{CommandChangeConsoleColor} - Сменить цвет консоли." +
+        $"\n{CommandExit} - Закрыть приложение.");
+    userInput = Console.ReadLine();
+
+    switch (userInput)
+    {
+        case CommandSetName:
+            Console.WriteLine("Введите имя пользователя:");
+            userName = Console.ReadLine();
+            Console.WriteLine($"Установлено имя {userName}");
+            Console.WriteLine("Нажмите любую клавишу для продолжения...");
+            Console.ReadKey();
+            break;
+
+        case CommandSetPassword:
+            Console.WriteLine("Введите пароль пользователя:");
+            userPassword = Console.ReadLine();
+            Console.WriteLine($"Установлен пароль {userPassword}");
+            Console.WriteLine("Нажмите любую клавишу для продолжения...");
+            Console.ReadKey();
+            break;
+
+        case CommandDatabaseEntry:
+            Console.WriteLine("Введите имя пользовтеля:");
+            userInput = Console.ReadLine();
+
+            if (userInput == userName)
+            {
+                Console.WriteLine("Введите пароль:");
+                userInput = Console.ReadLine();
+
+                if (userInput == userPassword)
+                    Console.WriteLine($"Добро пожаловать {userName}.");
+                else
+                    Console.WriteLine("Ошибка неверные или не заданные данные.");
+
+            }
+            else
+                Console.WriteLine("Ошибка неверные или не заданные данные.");
+
+            Console.WriteLine("Нажмите любую клавишу для продолжения...");
+            Console.ReadKey();
+            break;
+
+        case CommandChangeConsoleColor:
+            Console.WriteLine($"Выберите цвет:" +
+                $"\n{CommandSetConsoleColorRed} - Красный" +
+                $"\n{CommandSetConsoleColorGreen} - Зелёный" +
+                $"\n{CommandSetConsoleColorBlue} - Синий" +
+                $"\n{CommandSetConsoleColorYellow} - Желтый");
+            userInput = Console.ReadLine();
+
+            if (userInput == CommandSetConsoleColorRed)
+                Console.ForegroundColor = ConsoleColor.Red;
+            else if (userInput == CommandSetConsoleColorGreen)
+                Console.ForegroundColor = ConsoleColor.Green;
+            else if (userInput == CommandSetConsoleColorBlue)
+                Console.ForegroundColor = ConsoleColor.Blue;
+            else if (userInput == CommandSetConsoleColorYellow)
+                Console.ForegroundColor = ConsoleColor.Yellow;
+
+            Console.WriteLine("Нажмите любую клавишу для продолжения...");
+            Console.ReadKey();
+            break;
+
+        case CommandExit:
+            Console.WriteLine("Спасибо за использовние программы!");
+            isWork = false;
+            break;
+
+        default:
+            Console.WriteLine("Ошибка неверные или не заданные данные.");
+            Console.WriteLine("Нажмите любую клавишу для продолжения...");
+            Console.ReadKey();
+            break;
+    }
+}
