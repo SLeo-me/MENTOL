@@ -1,0 +1,23 @@
+char nameSymbol;
+string userInput;
+string userName;
+
+Console.WriteLine("Введите имя:");
+userInput = Console.ReadLine();
+Console.WriteLine("Введите символ:");
+nameSymbol = Convert.ToChar(Console.ReadLine());
+userName = nameSymbol + userInput+ nameSymbol;
+
+for (int i = 0; i < userName.Length; i++) 
+{
+    Console.Write(nameSymbol);
+}
+
+Console.WriteLine($"\n{userName}");
+
+for (int i = 0; i < userName.Length; i++)
+{
+    Console.Write(nameSymbol);
+}
+
+Console.ReadKey();
