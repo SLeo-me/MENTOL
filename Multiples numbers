@@ -1,0 +1,26 @@
+namespace Homework___Multiples_numbers
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Random random = new Random();
+            int number = random.Next(9, 26);
+            int maxValue = 150;
+            int minValue = 50;
+
+            Console.WriteLine($"Рандомное число:{number}");
+            Console.WriteLine("Кратные числа от 50 до 150:");
+
+            for (int i = 0;i <= maxValue; i += number)
+            {
+                if (i >= minValue)
+                {
+                    Console.WriteLine(i);
+                }
+            }
+
+            Console.ReadKey();
+        }
+    }
+}
