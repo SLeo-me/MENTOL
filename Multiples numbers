@@ -5,16 +5,18 @@ namespace Homework___Multiples_numbers
         static void Main(string[] args)
         {
             Random random = new Random();
-            int number = random.Next(9, 26);
-            int maxValue = 150;
-            int minValue = 50;
+            int maxNumberValue = 26;
+            int minNumberValue = 9;
+            int number = random.Next(minNumberValue, maxNumberValue);
+            int maxValueRange = 150;
+            int minValueRange = 50;
 
-            Console.WriteLine($"Рандомное число:{number}");
-            Console.WriteLine("Кратные числа от 50 до 150:");
+            Console.WriteLine($"Ваше рандомное число:{number}");
+            Console.WriteLine($"Кратные числа в диапазоне от {minValueRange} до {maxValueRange}:");
 
-            for (int i = 0;i <= maxValue; i += number)
+            for (int i = 0; i <= maxValueRange; i += number)
             {
-                if (i >= minValue)
+                if (i >= minValueRange)
                 {
                     Console.WriteLine(i);
                 }
