@@ -1,0 +1,26 @@
+namespace Homework___Two_degree
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Random random = new Random();
+
+            int minValue = 1, maxValue = 100;
+            int initialDegree = 1;
+            int numberDegree = 2;
+            int finalDegree = 0;
+            int number = random.Next(minValue, maxValue);
+
+            Console.WriteLine($"Сгенерированное число: {number}");
+
+            while (initialDegree <= number)
+            {
+                initialDegree *= numberDegree;
+                finalDegree++;
+            }
+
+            Console.WriteLine($"Число:{number}, это {numberDegree} в степени {finalDegree}");
+        }
+    }
+}
