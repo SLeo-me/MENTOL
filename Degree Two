@@ -6,7 +6,8 @@ namespace Homework___Two_degree
         {
             Random random = new Random();
 
-            int minValue = 1, maxValue = 100;
+            int minValue = 0;
+            int maxValue = 100;
             int initialDegree = 1;
             int numberDegree = 2;
             int finalDegree = 0;
@@ -20,7 +21,7 @@ namespace Homework___Two_degree
                 finalDegree++;
             }
 
-            Console.WriteLine($"Число:{number}, это {numberDegree} в степени {finalDegree}");
+            Console.WriteLine($"Число:{number} меньше {initialDegree}, а значит это {numberDegree} в степени {finalDegree}");
         }
     }
 }
